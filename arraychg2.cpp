@@ -31,7 +31,7 @@ int main() {
 
     int arrayMin = theArray[0];
     for (int i = 0; i < howmany; i++) {
-        if (theArray[i] < arrayMax) {
+        if (theArray[i] < arrayMin) {
             arrayMin = theArray[i];
         }
     }
