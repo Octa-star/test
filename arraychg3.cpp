@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    vector<int> arrayNilai;
+    vector<int> arrayScore;
     unordered_map<string, vector<int>> isWeird;
     int howMany = 0;
     int studentScore;
@@ -18,20 +18,20 @@ int main() {
     for (int i = 1; i <= howMany; i++) {
         cout << "Enter score #" << i << ": ";
         cin >> studentScore;
-        arrayNilai.push_back(studentScore);
+        arrayScore.push_back(studentScore);
     }
 
-    for (int eval : arrayNilai) {
+    for (int eval : arrayScore) {
         if (eval < 0) {
             isAbnormal = true;
             isWeird["Negatif value"].push_back(eval);
-        } if (eval > 100) {
+        } else if (eval > 100) {
             isAbnormal = true;
             isWeird["Overflow value"].push_back(eval);
-        } if (eval == 0) {
+        } else if (eval == 0) {
             isAbnormal = true;
             isWeird["No value"].push_back(eval);
-        } else if (eval <= 100 && eval > 0) {
+        } else {
             isAbnormal = false;
             isWeird["Normal value"].push_back(eval);
         }
